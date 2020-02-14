@@ -13,15 +13,18 @@ public class InterestCalculator implements Interest
     }
 
     @Override
-    public void calculateSimpleAndCompundInterest() {
-        double simpleInterest,compoundInterest;
+    public double calculateSimpleInterest() {
+        double simpleInterest;
          
         simpleInterest=(principleAmount*timePeriod*rateOfInterest)/100;
-
+        return simpleInterest;
+    }
+    @Override
+    public double calculateCompoundInterest() {
+        double compoundInterest;
         compoundInterest=(principleAmount * (Math.pow(1+(rateOfInterest/100),timePeriod)))-principleAmount;
 
-        System.out.println("Simple Interest "+simpleInterest);
-        System.out.println("Compound Interest "+compoundInterest);
+        return compoundInterest;
     }
 
 }

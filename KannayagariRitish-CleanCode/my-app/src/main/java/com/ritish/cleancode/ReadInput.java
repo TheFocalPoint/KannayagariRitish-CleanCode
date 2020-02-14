@@ -4,6 +4,7 @@ import java.util.*;
 public class ReadInput
 {
     static Scanner sc;
+    
     public static void readInputInterests()
     {
          sc =  new Scanner(System.in);
@@ -17,7 +18,11 @@ public class ReadInput
         int timePeriod=sc.nextInt();
 
         InterestCalculator calculate =new InterestCalculator(principleAmount,rateOfInterest,timePeriod);
-        calculate.calculateSimpleAndCompundInterest();
+        double simpleInterest=calculate.calculateSimpleInterest();
+        double compoundInterest=calculate.calculateCompoundInterest();
+
+        System.out.println("The Simple Interest is "+simpleInterest);
+        System.out.println("The Compound Interest is "+compoundInterest);
     }
     public static void readInputHouseValues()
     {
@@ -30,6 +35,7 @@ public class ReadInput
         int totalHouseArea = sc.nextInt();
 
         CalculateHouseValue calculate = new CalculateHouseValue(materialStandard, totalHouseArea);
-        calculate.estimateHouseCost();
+        int totalCost = calculate.estimateHouseCost();
+        System.out.println("The total estimated construction cost is "+totalCost);
     }
 }

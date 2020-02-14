@@ -12,7 +12,7 @@ public class CalculateHouseValue implements House
         this.materialStandard=materialStandard;
     }
     @Override
-    public void estimateHouseCost() {
+    public int estimateHouseCost() {
         if(materialStandard.compareToIgnoreCase("standard materials")==0)
         {
            totalCost=totalHouseArea*1200;
@@ -31,9 +31,7 @@ public class CalculateHouseValue implements House
             else
             totalCost=totalHouseArea*1800;
         }
-
-        
-        System.out.println("The total estimated construction cost is "+totalCost);
+        return totalCost;
   
     }
 }

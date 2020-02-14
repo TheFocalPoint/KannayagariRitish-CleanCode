@@ -1,6 +1,8 @@
 package com.ritish.cleancode;
 public interface Interest
 {
-     void calculateSimpleAndCompundInterest();
+     double calculateSimpleInterest();
+     double calculateCompoundInterest();
+
      
 }
